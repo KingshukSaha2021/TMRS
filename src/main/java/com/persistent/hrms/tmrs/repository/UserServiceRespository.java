@@ -57,7 +57,7 @@ public class UserServiceRespository {
 		 
 		System.out.println("Employee Id : " + id);
 		 
-		sql = "select t.ID, tt.TASK_TYPE, t.PRIORITY, t.NAME, t.DESCRIPTION, t.COMPLETION, t.ETA, t.ASSIGNMENT_DATE, a.BLOCKED, a.BLOCK_REASON from TASKS t, TASK_ASSIGNMENT a, TASK_TYPES tt where t.ID = a.TASK_ID and t.TYPE = tt.ID "
+		sql = "select t.ID, tt.TASK_TYPE, t.PRIORITY, t.NAME, t.DESCRIPTION, t.COMPLETION, t.ETA, t.CREATION_DATE, a.BLOCKED, a.BLOCK_REASON from TASKS t, TASK_ASSIGNMENT a, TASK_TYPES tt where t.ID = a.TASK_ID and t.TYPE = tt.ID "
 				+ "and a.USER_ID = ? order by t.PRIORITY desc, t.ID desc, tt.TASK_TYPE desc, t.COMPLETION desc "; 
 		 
 		allTasks = jdbcTemplate.query(sql, new Object[] {id}, new AllTaskRowMapper());

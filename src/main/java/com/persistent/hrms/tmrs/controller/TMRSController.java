@@ -139,7 +139,7 @@ public class TMRSController {
 	}
 	 
 	 
-	//assing a task to a user
+	//assign a task to an user
 	@PostMapping("/assingnTask") 
 	public void assignTask(Model model, @Valid @ModelAttribute TaskAssignment taskAssignment) {
 	  taskService.assignTask(taskAssignment); 

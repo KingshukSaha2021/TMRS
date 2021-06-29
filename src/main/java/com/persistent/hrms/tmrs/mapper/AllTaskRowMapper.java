@@ -20,7 +20,7 @@ public class AllTaskRowMapper implements RowMapper<AllTaskModel> {
 		allTask.setTaskDescription(rs.getString("DESCRIPTION"));
 		allTask.setCompletionPercentage(rs.getInt("COMPLETION"));
 		allTask.setEta(rs.getInt("ETA"));
-		allTask.setAssignmentDate(rs.getDate("ASSIGNMENT_DATE"));
+		allTask.setCreationDate(rs.getDate("CREATION_DATE"));
 		allTask.setBlocked(rs.getBoolean("BLOCKED"));
 		allTask.setBlockingReason(rs.getString("BLOCK_REASON"));
 		

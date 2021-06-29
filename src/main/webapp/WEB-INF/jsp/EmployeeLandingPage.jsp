@@ -38,7 +38,7 @@
              	<label style="margin-left:20px;font-weight: bold;">Task Description</label>
              	<label style="margin-left:20px;font-weight: bold;">Completion %</label>
              	<label style="margin-left:20px;font-weight: bold;">ETA</label>
-             	<label style="margin-left:20px;font-weight: bold;">Assignment Date</label>
+             	<label style="margin-left:20px;font-weight: bold;">Creation Date</label>
              	<label style="margin-left:20px;font-weight: bold;">Blocked</label>
              	<label style="margin-left:20px;font-weight: bold;">Blocking Reason</label>
              </div>
@@ -52,7 +52,7 @@
              	<input type="text" id="description${loop.index}" style="margin-left: 10px; width: 130px; border: none;" value="${task.taskDescription}" readonly/> 
              	<input type="text" id="completion${loop.index}" style="width: 115px; border: none;" value="${task.completionPercentage}" readonly/> 
              	<input type="text" id="eta${loop.index}" style="width: 50px;  border: none;" value="${task.eta}" readonly/>
-             	<input type="text" id="assignmentDate${loop.index}" style="width: 80px; border: none;" value="${task.assignmentDate}" readonly/>
+             	<input type="text" id="creationDate${loop.index}" style="width: 80px; border: none;" value="${task.creationDate}" readonly/>
              	<c:choose>
              	<c:when test="${task.blocked}">
              		<input type="checkbox" id="blocked${loop.index}" style="width: 120px;  border: none;" onclick="fnCheck(${loop.index})" checked/>

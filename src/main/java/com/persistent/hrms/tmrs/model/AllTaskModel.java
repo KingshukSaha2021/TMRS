@@ -11,7 +11,7 @@ public class AllTaskModel {
 	String taskDescription;
 	int completionPercentage;
 	int eta;
-	Date assignmentDate;
+	Date creationDate;
 	boolean blocked;
 	String blockingReason;
 	
@@ -57,11 +57,12 @@ public class AllTaskModel {
 	public void setEta(int eta) {
 		this.eta = eta;
 	}
-	public Date getAssignmentDate() {
-		return assignmentDate;
+	
+	public Date getCreationDate() {
+		return creationDate;
 	}
-	public void setAssignmentDate(Date assignmentDate) {
-		this.assignmentDate = assignmentDate;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 	public boolean isBlocked() {
 		return blocked;

@@ -16,7 +16,8 @@ public class Tasks {
 	private int type;
 	private int priority;
 	private int eta;
-	private Date assignment_date;
+	private Date creationDate;
+	
 	
 	public long getId() {
 		return id;
@@ -60,11 +61,12 @@ public class Tasks {
 	public void setEta(int eta) {
 		this.eta = eta;
 	}
-	public Date getAssignment_date() {
-		return assignment_date;
+
+	public Date getCreationDate() {
+		return creationDate;
 	}
-	public void setAssignment_date(Date assignment_date) {
-		this.assignment_date = assignment_date;
-	}	
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
 	
 }
