@@ -1,19 +1,31 @@
 package com.persistent.hrms.tmrs.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.persistent.hrms.tmrs.model.TaskComment;
+import com.persistent.hrms.tmrs.model.Tasks;
 
 @Repository
-public class TaskRepository {
+public interface TaskRepository extends JpaRepository<Tasks, Long>{
 	
-	@Autowired
-	JdbcTemplate jdbcTemplate;
+	/*
+	 * @Modifying
+	 * 
+	 * @Query("Update TASKS set completion = ?2 where id = ?1") public void
+	 * updateCompletionById(int taskId, int complementionPercentage);
+	 */
 	
-	public void addComment(TaskComment comment) {
-		
-	}
+	
+	
+	/*
+	 * @Modifying
+	 * 
+	 * @Query("Update TASKS set eta = ?2, description = ?3, priority = ?4 where id = ?1"
+	 * ) public void updateById(long taskId, int eta, String description, int
+	 * priority);
+	 */
+	 
 
 }

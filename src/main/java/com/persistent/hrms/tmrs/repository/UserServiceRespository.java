@@ -1,6 +1,7 @@
 package com.persistent.hrms.tmrs.repository;
 
 import com.persistent.hrms.tmrs.mapper.AllTaskRowMapper;
+import com.persistent.hrms.tmrs.mapper.AllUsersMapper;
 import com.persistent.hrms.tmrs.model.AllTaskModel;
 import com.persistent.hrms.tmrs.model.Users;
 
@@ -63,6 +64,17 @@ public class UserServiceRespository {
 		 
 		
 		return allTasks;
+	}
+	
+	
+	public List<Users> findAllUsers(long id){
+		List<Users> users = new ArrayList<Users>();
+		
+		String sql = "select ID, USER_NAME from USERS where MANAGER_ID = ?";
+		
+		users = jdbcTemplate.query(sql, new Object[] {id}, new AllUsersMapper() );
+		
+		return users;
 	}
 	
 }

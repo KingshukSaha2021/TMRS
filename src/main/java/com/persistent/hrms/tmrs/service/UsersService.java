@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 public class UsersService {
 
 	private UsersRepository repository;
-	@Autowired
 	private UserServiceRespository serviceRepository;
 
 	@Autowired
-	public UsersService(UsersRepository repository) {
+	public UsersService(UsersRepository repository, UserServiceRespository serviceRepository) {
 		this.repository = repository;
+		this.serviceRepository = serviceRepository;
 	}
 
 	public List<Users> findAll() {
@@ -37,9 +37,14 @@ public class UsersService {
 	}
 	 
 	
-	public List<AllTaskModel> getAllTasksForEmployee(Users user){ return
-		serviceRepository.getAllTasksForEmployee(user); 
+	public List<AllTaskModel> getAllTasksForEmployee(Users user){ 
+		return serviceRepository.getAllTasksForEmployee(user); 
 	}
 	
-
+	
+	public List<Users> findAllUsers(long id){ return
+			serviceRepository.findAllUsers(id); 
+	}
+	
+ 
 }
